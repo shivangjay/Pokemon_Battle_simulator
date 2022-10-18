@@ -30,10 +30,14 @@ class MaxHeap:
     def parent(self, pos):
 
         return (pos) // 2
-
-
-    def left_child(self, pos):
-        return 2*pos + 1
+ 
+    # Function to return the position of
+    # the left child for the node currently
+    # at posistion
+    
+    def leftChild(self, pos):
+         
+        return 2 * pos
 
     
     def right_child(self, pos):
@@ -139,7 +143,7 @@ class MaxHeap:
             if right:
                 print(f"Right child: {right}")
 
-
+# To test heap functionality 
 if __name__ == '__main__':
     max_heap = MaxHeap(15)
     max_heap.insert(5)
