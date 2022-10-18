@@ -1,5 +1,5 @@
 # In expression tree, the integer values will be at the leaf nodes
-# The operands will be all the other internal nodes
+# The operands will be all the other internal nodes/parent nodes to the 2 int leaf nodes
 
 class Node:
 
@@ -7,7 +7,6 @@ class Node:
         self.val = val
         self.right = None
         self.left = None
-
 
 def evaluate(root):
     if root is None:
@@ -32,6 +31,12 @@ def evaluate(root):
 
     elif root.data == '*':
         return left_sum * right_sum
+    
+    elif root.data == '**':
+        return left_sum ** right_sum
 
+    elif root.data == 'SQRT':
+        return left_sum.sqrt(right_sum)
+    
     else:
         return left_sum / right_sum
