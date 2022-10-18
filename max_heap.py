@@ -16,6 +16,20 @@ class MaxHeap:
 
     def parent(self, pos):
         return (pos) // 2
+    
+    def __init__(self, maxsize):
+
+        self.maxsize = maxsize
+
+        self.size = 0  # current number of elements in the heap
+
+        self.heap = [0] * self.maxsize
+
+        self.front = 0
+
+    def parent(self, pos):
+
+        return (pos) // 2
 
 
     def left_child(self, pos):
